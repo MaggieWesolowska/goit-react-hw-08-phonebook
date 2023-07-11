@@ -10,12 +10,13 @@ export const PrivateRoute = ({
   component: Component,
   redirectTo = '/',
 }) => {
-  const { isLoggedIn, isRefreshing } = useAuth();
-  const shouldRedirect = !isLoggedIn && !isRefreshing;
+  // component - ContactsPage
+  const { isLoggedIn, isRefreshing } = useAuth(); // isLoggedIn - true or false
+  const shouldRedirect = !isLoggedIn && !isRefreshing; // component - RegisterPage or LoginPage
 
   return shouldRedirect ? (
     <Navigate to={redirectTo} />
   ) : (
     Component
-  );
+  ); // if shouldRedirect is true, then redirect to redirectTo, else render Component
 };
