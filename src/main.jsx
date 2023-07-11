@@ -7,6 +7,7 @@ import './index.css';
 import { Provider } from 'react-redux';
 import { store /*persistor*/ } from '../src/redux/store.js';
 // import 'modern-normalize';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
