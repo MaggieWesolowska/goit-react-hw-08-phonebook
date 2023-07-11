@@ -6,12 +6,12 @@ import css from './ContactForm/ContactForm.module.css';
 import {
   fetchContacts,
   deleteContact,
-} from '../redux/operations/operations';
+} from '../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectContacts,
   selectFilters,
-} from '../redux/selectors/selectors';
+} from '../redux/selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
