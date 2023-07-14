@@ -3,6 +3,7 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
+  editContact,
 } from '../operations';
 
 const handlePending = state => {
@@ -49,6 +50,14 @@ const contactsSlice = createSlice({
       state.contacts = state.contacts.filter(
         contact => contact.id !== id
       );
+    },
+
+    [editContact.pending]: handlePending,
+    [editContact.rejected]: handleRejected,
+    [editContact.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.contacts.push(action.payload);
     },
   },
 });
