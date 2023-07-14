@@ -20,7 +20,7 @@ export const Contacts = () => {
   const { filter } = useSelector(selectFilters);
   const [isEditModalOpen, setIsEditModalOpen] =
     useState(false);
-  const [editId, setEditId] = useState(null);
+  const [editId, setEditId] = useState('');
 
   useEffect(() => {
     dispatch(fetchContacts());

@@ -7,10 +7,6 @@ import filterSlice from './slices/filterSlice';
 import { combineReducers } from 'redux';
 import authSlice from '../redux/auth/slice';
 import storage from 'redux-persist/lib/storage';
-// import {
-//   persistStore,
-//   persistReducer,
-// } from 'redux-persist';
 import {
   persistStore,
   persistReducer,

@@ -1,21 +1,8 @@
 import { useEffect, lazy } from 'react';
-// import { ContactForm } from './ContactForm/ContactForm';
-// import { Filter } from './Filter/Filter';
-// import { ContactList } from './ContactList/ContactList';
-// import css from './ContactForm/ContactForm.module.css';
-// import {
-//   fetchContacts,
-//   deleteContact,
-//   editContact,
-// } from '../redux/operations';
-import { useDispatch, useSelector } from 'react-redux';
-// import {
-//   selectContacts,
-//   selectFilters,
-// } from '../redux/selectors';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout';
-// import { PrivateRoute } from './PrivateRoute';
+import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from '../redux/auth/operations';
 import { useAuth } from '../hooks';
@@ -25,7 +12,7 @@ const RegisterPage = lazy(() =>
   import('../pages/Register')
 );
 const LoginPage = lazy(() => import('../pages/Login'));
-// const TasksPage = lazy(() => import('../pages/Tasks'));
+const Phonebook = lazy(() => import('../pages/Phonebook'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -59,15 +46,15 @@ const App = () => {
             />
           }
         />
-        {/* <Route
+        <Route
           path='/tasks'
           element={
             <PrivateRoute
               redirectTo='/login'
-              component={<TasksPage />}
+              component={<Phonebook />}
             />
           }
-        /> */}
+        />
       </Route>
     </Routes>
   );
