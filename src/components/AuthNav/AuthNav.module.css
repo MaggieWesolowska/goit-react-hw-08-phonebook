@@ -1,0 +1,32 @@
+.linkReg {
+  color: #333;
+  text-decoration: none;
+  font-size: 2rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 250ms ease-in-out;
+  margin-right: 15px;
+
+  &:hover {
+    color: white;
+    background-color: rgb(22, 119, 255);
+    border: none;
+  }
+}
+
+.linkLog {
+  color: #333;
+  text-decoration: none;
+  font-size: 2rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 250ms ease-in-out;
+
+  &:hover {
+    color: white;
+    background-color: rgb(22, 119, 255);
+    border: none;
+  }
+}
