@@ -52,7 +52,7 @@ export const editContact = createAsyncThunk(
         `/contacts/${data.id}`,
         {
           name: data.name,
-          number: data.phone,
+          number: data.number,
         }
       );
       return response.data;

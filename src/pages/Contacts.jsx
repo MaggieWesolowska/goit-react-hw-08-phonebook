@@ -1,23 +1,19 @@
 import { useEffect, useState } from 'react';
-import { ContactForm } from './ContactForm/ContactForm';
-import { Filter } from './Filter/Filter';
-import { ContactList } from './ContactList/ContactList';
-import css from './ContactForm/ContactForm.module.css';
+import { ContactForm } from '../components/ContactForm/ContactForm';
+import { Filter } from '../components/Filter/Filter';
+import { ContactList } from '../components/ContactList/ContactList';
 import {
   fetchContacts,
   deleteContact,
   editContact,
 } from '../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  selectContacts,
-  selectFilters,
-} from '../redux/selectors';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
-  const { contacts } = useSelector(selectContacts);
-  const { filter } = useSelector(selectFilters);
+  const { contacts, filter } = useSelector(
+    state => state.contacts
+  );
   const [isEditModalOpen, setIsEditModalOpen] =
     useState(false);
   const [editId, setEditId] = useState('');
@@ -69,9 +65,9 @@ export const Contacts = () => {
         borderRadius: 10,
         paddingBottom: 30,
       }}>
-      <h1 className={css.header}>Phonebook</h1>
+      <h1>Phonebook</h1>
       <ContactForm />
-      <h2 className={css.contacts}>Contacts</h2>
+      <h2>Contacts</h2>
       <Filter filter={filter} />
       <ContactList
         contacts={getFilteredContacts()}

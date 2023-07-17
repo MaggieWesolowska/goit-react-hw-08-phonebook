@@ -57,7 +57,12 @@ const contactsSlice = createSlice({
     [editContact.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      state.contacts.push(action.payload);
+      const { id, name, number } = action.payload;
+      let contactEdit = state.contacts.find(
+        contact => contact.id === id
+      );
+      contactEdit.name = name;
+      contactEdit.number = number;
     },
   },
 });

@@ -23,7 +23,7 @@ export const ContactList = ({
         {contacts &&
           contacts.map((contact, id) => (
             <li key={id} className={css.contactListItem}>
-              {contact.name}: {contact.phone}
+              {contact.name}: {contact.number}
               <button
                 className={css.contactItemBtn}
                 type='button'
@@ -58,7 +58,7 @@ ContactList.propTypes = {
     propTypes.exact({
       id: propTypes.string.isRequired,
       name: propTypes.string.isRequired,
-      phone: propTypes.string.isRequired,
+      number: propTypes.string.isRequired,
       createdAt: propTypes.string,
     })
   ),

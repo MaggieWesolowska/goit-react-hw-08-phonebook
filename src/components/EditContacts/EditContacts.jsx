@@ -12,22 +12,19 @@ export const EditContacts = ({
   useEffect(() => {
     if (editContact) {
       setEditName(editContact.name);
-      setEditPhone(editContact.phone);
+      setEditPhone(editContact.number);
     }
   }, [editContact]);
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(id);
     const contact = {
       name: editName,
-      phone: editPhone,
+      number: editPhone,
       id: id,
     };
     handleEdit(contact);
   };
-
-  console.log(editContact);
 
   return (
     <div className={css.modalOverlay}>
@@ -41,7 +38,7 @@ export const EditContacts = ({
         </label>
         <label name='phone'>
           <input
-            defaultValue={editContact.phone}
+            defaultValue={editContact.number}
             onChange={e =>
               setEditPhone(e.currentTarget.value)
             }></input>
