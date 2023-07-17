@@ -54,20 +54,18 @@ export const Contacts = () => {
   return (
     <div
       style={{
-        height: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         color: '#333',
-        background: 'lightgrey',
         margin: 20,
         borderRadius: 10,
         paddingBottom: 30,
       }}>
-      <h1>Phonebook</h1>
+      <h1>Add Contact</h1>
       <ContactForm />
-      <h2>Contacts</h2>
+      <h1>Your Contacts</h1>
       <Filter filter={filter} />
       <ContactList
         contacts={getFilteredContacts()}

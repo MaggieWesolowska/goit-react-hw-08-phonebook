@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import css from '../EditContacts/EditContacts.module.css';
 import { useState, useEffect } from 'react';
 import { Paper } from '@mui/material';
@@ -46,10 +47,22 @@ export const EditContacts = ({
                   setEditPhone(e.currentTarget.value)
                 }></input>
             </label>
-            <button type='submit'>Edit</button>
+            <button type='submit'>Confirm</button>
           </form>
         </div>
       </Paper>
     </div>
   );
+};
+
+EditContacts.propTypes = {
+  contacts: propTypes.arrayOf(
+    propTypes.exact({
+      id: propTypes.string.isRequired,
+      name: propTypes.string.isRequired,
+      number: propTypes.string.isRequired,
+    })
+  ),
+  handleEdit: propTypes.func,
+  editContact: propTypes.object,
 };

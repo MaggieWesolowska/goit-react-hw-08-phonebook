@@ -28,7 +28,6 @@ export const ContactList = ({
                 className={css.contactItemBtn}
                 type='button'
                 name='edit'
-                // id={contact.id}
                 onClick={() => handleModalOpen(contact.id)}>
                 Edit
               </button>
@@ -59,9 +58,12 @@ ContactList.propTypes = {
       id: propTypes.string.isRequired,
       name: propTypes.string.isRequired,
       number: propTypes.string.isRequired,
-      createdAt: propTypes.string,
+      editId: propTypes.string,
     })
   ),
   handleDelete: propTypes.func,
   handleEdit: propTypes.func,
+  handleModalOpen: propTypes.func,
+  closeModal: propTypes.func,
+  isEditModalOpen: propTypes.bool,
 };
