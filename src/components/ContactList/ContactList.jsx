@@ -62,6 +62,6 @@ ContactList.propTypes = {
       createdAt: propTypes.string,
     })
   ),
-  handleDelete: propTypes.func.isRequired,
+  handleDelete: propTypes.func,
   handleEdit: propTypes.func,
 };

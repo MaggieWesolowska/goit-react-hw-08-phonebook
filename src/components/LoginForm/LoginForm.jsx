@@ -10,6 +10,7 @@ export const LoginForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+    console.log(form);
     dispatch(
       logIn({
         email: form.elements.email.value,
@@ -31,6 +32,7 @@ export const LoginForm = () => {
           id='outlined-required'
           label='Required'
           defaultValue='Email'
+          name='email'
         />
       </label>
       <label className={css.label}>
@@ -40,10 +42,13 @@ export const LoginForm = () => {
           id='outlined-required'
           label='Required'
           defaultValue='Password'
+          name='password'
         />
       </label>
       <div className={css.loginBtn}>
-        <Button variant='contained'>Log In</Button>
+        <Button type='submit' variant='contained'>
+          Log In
+        </Button>
       </div>
     </form>
   );

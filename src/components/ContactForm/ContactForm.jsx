@@ -8,7 +8,7 @@ export const ContactForm = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const dispatch = useDispatch();
-  const { contacts } = useSelector(selectContacts);
+  const { contacts } = useSelector(state => state.contacts);
 
   const handleNameChange = e => {
     const { value } = e.target;

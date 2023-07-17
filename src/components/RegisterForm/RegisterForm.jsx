@@ -42,6 +42,7 @@ export const RegisterForm = () => {
           helperText='Please enter your name'
           id='demo-helper-text-misaligned'
           label='Name'
+          name='name'
         />
       </label>
       <label className={css.label}>
@@ -50,6 +51,7 @@ export const RegisterForm = () => {
           helperText='Please enter your email'
           id='demo-helper-text-misaligned'
           label='Email'
+          name='email'
         />
       </label>
       <label className={css.label}>
@@ -58,10 +60,13 @@ export const RegisterForm = () => {
           helperText='Please enter your password'
           id='demo-helper-text-misaligned'
           label='Password'
+          name='password'
         />
       </label>
       <div className={css.loginBtn}>
-        <Button variant='contained'>Register</Button>
+        <Button type='submit' variant='contained'>
+          Register
+        </Button>
       </div>
     </form>
   );

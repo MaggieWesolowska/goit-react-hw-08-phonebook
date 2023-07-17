@@ -32,5 +32,5 @@ export const Filter = ({ filter }) => {
 };
 
 Filter.propTypes = {
-  filter: propTypes.string.isRequired,
+  filter: propTypes.string,
 };
