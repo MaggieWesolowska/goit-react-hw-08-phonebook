@@ -7,7 +7,8 @@ const StyledLink = styled(NavLink)`
   color: #333;
   &.active {
     color: white;
-    background-color: orangered;
+    background-color: #673ab7;
+    border: white;
   }
 `;
 
@@ -15,7 +16,7 @@ export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav className={css.header}>
+    <nav>
       <StyledLink to='/' className={css.link}>
         Home
       </StyledLink>

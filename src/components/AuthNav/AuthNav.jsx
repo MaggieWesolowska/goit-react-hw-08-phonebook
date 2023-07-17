@@ -3,10 +3,10 @@ import css from './AuthNav.module.css';
 import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
-  color: black;
+  color: #333;
   &.active {
     color: white;
-    background-color: orangered;
+    background-color: #673ab7;
     border: white;
   }
 `;

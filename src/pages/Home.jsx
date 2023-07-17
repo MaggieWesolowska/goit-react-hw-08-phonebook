@@ -8,7 +8,7 @@ import {
 const styles = {
   container: {
     minHeight: 'calc(50vh - 50px)',
-    minWidth: 'calc(50vw - 50px)',
+    minWidth: 'calc(50vh - 50px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -20,6 +20,7 @@ const styles = {
     textAlign: 'center',
     marginBottom: 20,
     color: '#333',
+    textShadow: '4px 4px 4px rgba(0, 0, 0, 0.3)',
   },
 };
 

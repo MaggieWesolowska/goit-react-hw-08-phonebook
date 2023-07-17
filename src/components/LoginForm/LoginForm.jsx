@@ -9,8 +9,9 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import InputLabel from '@mui/material/InputLabel';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -37,13 +38,22 @@ export const LoginForm = () => {
     event.preventDefault();
   };
 
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: '#673ab7',
+    '&:hover': {
+      backgroundColor: '#673ab7',
+      boxShadow: '2px 6px 6px rgba(0, 0, 0, 0.4)',
+    },
+  }));
+
   return (
     <form
       className={css.form}
       onSubmit={handleSubmit}
       autoComplete='off'>
-      <label className={css.label}>
-        <p className={css.labelName}>Email</p>
+      <div>
+        <p className={css.label}>Email</p>
         <TextField
           id='input-with-icon-textfield'
           label='User Email'
@@ -57,11 +67,9 @@ export const LoginForm = () => {
           variant='outlined'
           name='email'
         />
-      </label>
-      <div className={css.label}>
-        <InputLabel htmlFor='outlined-adornment-password'>
-          Password
-        </InputLabel>
+      </div>
+      <p className={css.label}>Password</p>
+      <div>
         <OutlinedInput
           name='password'
           id='outlined-adornment-password'
@@ -84,9 +92,12 @@ export const LoginForm = () => {
         />
       </div>
       <div className={css.loginBtn}>
-        <Button type='submit' variant='contained'>
+        <ColorButton
+          type='submit'
+          variant='contained'
+          size='large'>
           Log In
-        </Button>
+        </ColorButton>
       </div>
     </form>
   );

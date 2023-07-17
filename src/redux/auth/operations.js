@@ -24,12 +24,12 @@ export const register = createAsyncThunk(
 
       // After successful registration, add the token to the HTTP header
       setAuthHeader(res.data.token);
-      Notify.success('Register success!', {
+      Notify.success('Register successful!', {
         position: 'right-bottom',
       });
       return res.data;
     } catch (err) {
-      Notify.failure('Error!', {
+      Notify.failure('Please enter correct details!', {
         position: 'right-bottom',
       });
       return thunkAPI.rejectWithValue(err.message);
@@ -47,15 +47,18 @@ export const logIn = createAsyncThunk(
       );
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
-      Notify.success('LogIn success!', {
+      Notify.success('Login successful!', {
         position: 'right-bottom',
       });
 
       return res.data;
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
-      });
+      Notify.failure(
+        'Please enter correct login details!',
+        {
+          position: 'right-bottom',
+        }
+      );
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -68,7 +71,7 @@ export const logOut = createAsyncThunk(
       await axios.post('/users/logout');
       // After a successful logout, remove the token from the HTTP header
       clearAuthHeader();
-      Notify.success('LogOut success!', {
+      Notify.success('Logout successful!', {
         position: 'right-bottom',
       });
     } catch (err) {
