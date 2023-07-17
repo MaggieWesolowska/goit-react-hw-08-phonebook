@@ -1,5 +1,6 @@
 import css from '../EditContacts/EditContacts.module.css';
 import { useState, useEffect } from 'react';
+import { Paper } from '@mui/material';
 
 export const EditContacts = ({
   handleEdit,
@@ -28,23 +29,27 @@ export const EditContacts = ({
 
   return (
     <div className={css.modalOverlay}>
-      <form onSubmit={handleSubmit}>
-        <label name='name'>
-          <input
-            defaultValue={editContact.name}
-            onChange={e =>
-              setEditName(e.currentTarget.value)
-            }></input>
-        </label>
-        <label name='phone'>
-          <input
-            defaultValue={editContact.number}
-            onChange={e =>
-              setEditPhone(e.currentTarget.value)
-            }></input>
-        </label>
-        <button type='submit'>Edit</button>
-      </form>
+      <Paper elevation={3}>
+        <div className={css.modal}>
+          <form onSubmit={handleSubmit}>
+            <label name='name'>
+              <input
+                defaultValue={editContact.name}
+                onChange={e =>
+                  setEditName(e.currentTarget.value)
+                }></input>
+            </label>
+            <label name='phone'>
+              <input
+                defaultValue={editContact.number}
+                onChange={e =>
+                  setEditPhone(e.currentTarget.value)
+                }></input>
+            </label>
+            <button type='submit'>Edit</button>
+          </form>
+        </div>
+      </Paper>
     </div>
   );
 };

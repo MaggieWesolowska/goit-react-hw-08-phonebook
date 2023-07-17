@@ -46,7 +46,7 @@ export const RegisterForm = () => {
         />
       </label>
       <label className={css.label}>
-        <p className={css.labelName}>Email</p>
+        <p>Email</p>
         <TextField
           helperText='Please enter your email'
           id='demo-helper-text-misaligned'

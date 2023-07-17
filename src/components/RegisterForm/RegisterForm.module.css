@@ -6,16 +6,16 @@
 }
 
 .label {
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
 }
 
-.labelName {
+/* .labelName {
   text-align: center;
   margin-bottom: 5px;
   margin-top: 10px;
   color: #333;
-}
+} */
 
 .loginBtn {
   text-align: center;
