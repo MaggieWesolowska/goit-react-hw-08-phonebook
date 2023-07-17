@@ -68,8 +68,8 @@ export const LoginForm = () => {
           name='email'
         />
       </div>
-      <p className={css.label}>Password</p>
       <div>
+        <p className={css.label}>Password</p>
         <OutlinedInput
           name='password'
           id='outlined-adornment-password'

@@ -3,6 +3,8 @@ import { register } from '../../redux/auth/operations';
 import css from './RegisterForm.module.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -20,54 +22,61 @@ export const RegisterForm = () => {
     form.reset();
   };
 
-  //   const { isLoading, error } = useSelector(state => state.auth);
-
-  //   const onFinish = values => {
-  //     const { name, email, password, confirm } = values;
-
-  //     if (password === confirm) {
-  //       dispatch(register({ name, email, password }));
-  //       !isLoading && !error && form.resetFields();
-  //     }
-  //   };
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: '#673ab7',
+    '&:hover': {
+      backgroundColor: '#673ab7',
+      boxShadow: '2px 6px 6px rgba(0, 0, 0, 0.4)',
+    },
+  }));
 
   return (
     <form
       className={css.form}
       onSubmit={handleSubmit}
       autoComplete='off'>
-      <label className={css.label}>
-        <p>Username</p>
+      <div>
+        <p className={css.label}>Username</p>
         <TextField
-          helperText='Please enter your name'
-          id='demo-helper-text-misaligned'
+          helperText='Choose name you want to use'
           label='Name'
           name='name'
         />
-      </label>
-      <label className={css.label}>
-        <p>Email</p>
+      </div>
+      <div>
+        <p className={css.label}>Email</p>
         <TextField
-          helperText='Please enter your email'
-          id='demo-helper-text-misaligned'
+          helperText='Enter valid email'
           label='Email'
           name='email'
         />
-      </label>
-      <label className={css.label}>
-        <p>Password</p>
+      </div>
+      <div>
+        <p className={css.label}>Password</p>
         <TextField
-          helperText='Please enter your password'
-          id='demo-helper-text-misaligned'
+          helperText='Choose strong password!'
           label='Password'
           name='password'
           type='password'
         />
-      </label>
+      </div>
+      <div>
+        <p className={css.label}>Confirm Password</p>
+        <TextField
+          helperText='Confirm your password!'
+          label='Confirm Password'
+          name='password'
+          type='password'
+        />
+      </div>
       <div className={css.loginBtn}>
-        <Button type='submit' variant='contained'>
+        <ColorButton
+          type='submit'
+          variant='contained'
+          size='large'>
           Register
-        </Button>
+        </ColorButton>
       </div>
     </form>
   );

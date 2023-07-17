@@ -1,13 +1,13 @@
 .form {
-  width: 200px;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .label {
-  text-align: left;
   margin-bottom: 20px;
   color: #673ab7;
   font-weight: 700;
