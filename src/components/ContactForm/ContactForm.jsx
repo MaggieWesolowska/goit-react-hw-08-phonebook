@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import css from './ContactForm.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from '../../redux/selectors';
 import { addContact } from '../../redux/operations';
+import { Notify } from 'notiflix';
+Notify;
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -27,7 +28,9 @@ export const ContactForm = () => {
         contact => name === contact.name
       ) !== -1
     ) {
-      alert(`${name} is already in contacts.`);
+      Notify.warning('Contact already exists!', {
+        position: 'right-bottom',
+      });
     } else {
       dispatch(
         addContact({

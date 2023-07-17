@@ -1,17 +1,25 @@
 import { NavLink } from 'react-router-dom';
 import css from './AuthNav.module.css';
-// import Button from '@mui/material/Button';
-import ToggleButton from '@mui/material/ToggleButton';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: black;
+  &.active {
+    color: white;
+    background-color: orangered;
+    border: white;
+  }
+`;
 
 export const AuthNav = () => {
   return (
     <div>
-      <NavLink className={css.linkReg} to='/register'>
-        <ToggleButton value='web'>Register</ToggleButton>
-      </NavLink>
-      <NavLink className={css.linkLog} to='/login'>
-        <ToggleButton value='ios'>Log In</ToggleButton>
-      </NavLink>
+      <StyledLink className={css.linkReg} to='/register'>
+        Register
+      </StyledLink>
+      <StyledLink className={css.linkLog} to='/login'>
+        Login
+      </StyledLink>
     </div>
   );
 };

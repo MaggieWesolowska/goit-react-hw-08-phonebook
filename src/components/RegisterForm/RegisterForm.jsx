@@ -61,6 +61,7 @@ export const RegisterForm = () => {
           id='demo-helper-text-misaligned'
           label='Password'
           name='password'
+          type='password'
         />
       </label>
       <div className={css.loginBtn}>

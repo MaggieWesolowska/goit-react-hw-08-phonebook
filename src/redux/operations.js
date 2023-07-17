@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix';
 
 axios.defaults.baseURL =
   'https://connections-api.herokuapp.com';
@@ -9,8 +10,14 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/contacts');
+      Notify.success('Fetching success!', {
+        position: 'right-bottom',
+      });
       return response.data;
     } catch (err) {
+      Notify.failure('Error!', {
+        position: 'right-bottom',
+      });
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -23,8 +30,14 @@ export const addContact = createAsyncThunk(
       const response = await axios.post('/contacts', {
         ...contact,
       });
+      Notify.success('New contact added success!', {
+        position: 'right-bottom',
+      });
       return response.data;
     } catch (err) {
+      Notify.failure('Error!', {
+        position: 'right-bottom',
+      });
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -37,8 +50,14 @@ export const deleteContact = createAsyncThunk(
       const response = await axios.delete(
         `/contacts/${contactId}`
       );
+      Notify.success('Delete success!', {
+        position: 'right-bottom',
+      });
       return response.data;
     } catch (err) {
+      Notify.failure('Error!', {
+        position: 'right-bottom',
+      });
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -55,8 +74,14 @@ export const editContact = createAsyncThunk(
           number: data.number,
         }
       );
+      Notify.success('Edit success!', {
+        position: 'right-bottom',
+      });
       return response.data;
     } catch (err) {
+      Notify.failure('Error!', {
+        position: 'right-bottom',
+      });
       return thunkAPI.rejectWithValue(err.message);
     }
   }

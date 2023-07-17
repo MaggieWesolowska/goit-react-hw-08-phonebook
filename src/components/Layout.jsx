@@ -1,7 +1,14 @@
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
+// import styled from 'styled-components';
+
+// const StyledLink = styled(NavLink)`
+//   color: white;
+//   &.active {
+//     color: orangered;
+//   }
+// `;
 
 export const Layout = () => {
   return (
@@ -10,7 +17,6 @@ export const Layout = () => {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-      <Toaster position='top-right' reverseOrder={false} />
     </div>
   );
 };
