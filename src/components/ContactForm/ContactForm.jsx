@@ -4,6 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../../redux/operations';
 import { Notify } from 'notiflix';
 Notify;
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import TextField from '@mui/material/TextField';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -44,10 +48,19 @@ export const ContactForm = () => {
     setPhone('');
   };
 
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: '#673ab7',
+    '&:hover': {
+      backgroundColor: '#673ab7',
+      boxShadow: '2px 6px 6px rgba(0, 0, 0, 0.4)',
+    },
+  }));
+
   return (
     <form className={css.form} onSubmit={handleFormSubmit}>
       <label className={css.formLabel}>Name </label>
-      <input
+      <TextField
         className={css.formInput}
         type='text'
         name='name'
@@ -57,9 +70,12 @@ export const ContactForm = () => {
         placeholder='Enter name'
         value={name}
         onChange={handleNameChange}
+        id='filled-basic'
+        label=''
+        variant='filled'
       />
       <label className={css.formLabel}>Number </label>
-      <input
+      <TextField
         className={css.formInput}
         type='tel'
         name='number'
@@ -69,10 +85,17 @@ export const ContactForm = () => {
         placeholder='Enter phone number'
         value={phone}
         onChange={handleNumberChange}
+        id='filled-basic'
+        label=''
+        variant='filled'
       />
-      <button className={css.formBtn} type='submit'>
-        Add contact
-      </button>
+      <ColorButton
+        className={css.formBtn}
+        type='submit'
+        variant='contained'
+        size='large'>
+        Add Contact
+      </ColorButton>
     </form>
   );
 };
