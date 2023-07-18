@@ -2,6 +2,10 @@ import propTypes from 'prop-types';
 import css from '../EditContacts/EditContacts.module.css';
 import { useState, useEffect } from 'react';
 import { Paper } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 
 export const EditContacts = ({
   handleEdit,
@@ -28,26 +32,55 @@ export const EditContacts = ({
     handleEdit(contact);
   };
 
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(purple[500]),
+    backgroundColor: '#673ab7',
+    '&:hover': {
+      backgroundColor: '#673ab7',
+      boxShadow: '2px 6px 6px rgba(0, 0, 0, 0.4)',
+    },
+  }));
+
   return (
-    <div className={css.modalOverlay}>
-      <Paper elevation={3}>
+    <div>
+      <Paper elevation={5}>
         <div className={css.modal}>
-          <form onSubmit={handleSubmit}>
+          <form
+            className={css.modalForm}
+            onSubmit={handleSubmit}>
             <label name='name'>
-              <input
+              <TextField
+                className={css.editInput}
                 defaultValue={editContact.name}
                 onChange={e =>
                   setEditName(e.currentTarget.value)
-                }></input>
+                }
+                id='outlined-basic'
+                label=''
+                variant='outlined'
+                size='small'
+              />
             </label>
             <label name='phone'>
-              <input
+              <TextField
+                className={css.editInput}
                 defaultValue={editContact.number}
                 onChange={e =>
                   setEditPhone(e.currentTarget.value)
-                }></input>
+                }
+                id='outlined-basic'
+                label=''
+                variant='outlined'
+                size='small'
+              />
             </label>
-            <button type='submit'>Confirm</button>
+            <ColorButton
+              className={css.editBtn}
+              type='submit'
+              variant='contained'
+              size='small'>
+              Confirm
+            </ColorButton>
           </form>
         </div>
       </Paper>

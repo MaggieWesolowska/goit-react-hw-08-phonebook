@@ -63,7 +63,7 @@ export const Contacts = () => {
         borderRadius: 10,
         paddingBottom: 30,
       }}>
-      <h1>Add Contact</h1>
+      <h1>Create New Contact</h1>
       <ContactForm />
       <h1>Your Contacts</h1>
       <Filter filter={filter} />

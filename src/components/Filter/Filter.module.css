@@ -1,23 +1,15 @@
 .formLabel {
   display: flex;
   flex-direction: column;
+  color: #673ab7;
   font-size: 15px;
   font-weight: 600;
+  margin-top: 25px;
+  margin-left: 10px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 .filterInput {
   width: 50vw;
-  background: lightgray;
-  font-size: 15px;
-  border: 1px solid white;
-  border-radius: 5px;
   padding: 10px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0px 4px 4px white);
-
-  &:hover,
-  &:focus {
-    background-color: white;
-    border: 1px solid lightgrey;
-  }
 }

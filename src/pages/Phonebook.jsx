@@ -6,7 +6,7 @@ const Phonebook = () => {
   return (
     <>
       <ContactForm />
-      <h2>Contacts</h2>
+      {/* <h2>Contacts</h2> */}
       <Filter />
       <ContactList />
     </>

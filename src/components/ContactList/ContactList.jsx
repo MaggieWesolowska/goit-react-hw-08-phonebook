@@ -16,7 +16,7 @@ export const ContactList = ({
   };
 
   return (
-    <div className={css.contactListContainer}>
+    <div>
       {' '}
       <ul className={css.contactList}>
         {' '}
@@ -25,7 +25,7 @@ export const ContactList = ({
             <li key={id} className={css.contactListItem}>
               {contact.name}: {contact.number}
               <button
-                className={css.contactItemBtn}
+                className={css.contactListBtn}
                 type='button'
                 name='edit'
                 onClick={() => handleModalOpen(contact.id)}>
@@ -33,7 +33,7 @@ export const ContactList = ({
               </button>
               <button
                 type='button'
-                className={css.contactItemBtn}
+                className={css.contactListBtn}
                 onClick={() => handleDelete(contact.id)}>
                 Delete
               </button>

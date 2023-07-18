@@ -1,17 +1,18 @@
-/* .modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1200;
-} */
-
 .modal {
+  padding: 25px;
+  box-shadow: 2px 6px 6px rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modalForm {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.editInput {
   background-color: white;
-  padding: 20px;
+  border-radius: 5px;
 }
