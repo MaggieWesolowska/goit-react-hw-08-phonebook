@@ -9,11 +9,10 @@
 
 .label {
   text-align: left;
-  margin-bottom: 20px;
   color: #673ab7;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 8px;
+  margin-top: 15px;
+  margin-bottom: 5px;
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
 }
 

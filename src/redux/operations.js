@@ -10,14 +10,17 @@ export const fetchContacts = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await axios.get('/contacts');
-      Notify.success('Fetching success!', {
-        position: 'right-bottom',
+      Notify.success('Fetching contacts success!', {
+        position: 'left-top',
       });
       return response.data;
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
-      });
+      Notify.failure(
+        "We've encountered an error, please try again!",
+        {
+          position: 'left-top',
+        }
+      );
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -30,14 +33,17 @@ export const addContact = createAsyncThunk(
       const response = await axios.post('/contacts', {
         ...contact,
       });
-      Notify.success('New contact added success!', {
-        position: 'right-bottom',
+      Notify.success('New contact created successfully!', {
+        position: 'left-top',
       });
       return response.data;
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
-      });
+      Notify.failure(
+        'New contact failed to add, please try again!',
+        {
+          position: 'left-top',
+        }
+      );
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -51,12 +57,12 @@ export const deleteContact = createAsyncThunk(
         `/contacts/${contactId}`
       );
       Notify.success('Delete success!', {
-        position: 'right-bottom',
+        position: 'left-top',
       });
       return response.data;
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
+      Notify.failure('Delete error, try again!', {
+        position: 'left-top',
       });
       return thunkAPI.rejectWithValue(err.message);
     }
@@ -75,12 +81,12 @@ export const editContact = createAsyncThunk(
         }
       );
       Notify.success('Edit success!', {
-        position: 'right-bottom',
+        position: 'left-top',
       });
       return response.data;
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
+      Notify.failure('Edit error, try again!', {
+        position: 'left-top',
       });
       return thunkAPI.rejectWithValue(err.message);
     }

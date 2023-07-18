@@ -15,9 +15,12 @@ export const Filter = ({ filter }) => {
       })
     );
   };
+
+  // const selectFilters = state => state.filterSlice;
+
   return (
     <div>
-      <label className={css.formLabel}>
+      <label className={css.filterLabel}>
         Find contacts by name
       </label>
       {/* <input

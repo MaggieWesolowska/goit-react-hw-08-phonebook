@@ -25,12 +25,12 @@ export const register = createAsyncThunk(
       // After successful registration, add the token to the HTTP header
       setAuthHeader(res.data.token);
       Notify.success('Register successful!', {
-        position: 'right-bottom',
+        position: 'left-top',
       });
       return res.data;
     } catch (err) {
-      Notify.failure('Please enter correct details!', {
-        position: 'right-bottom',
+      Notify.failure('Please enter all details!', {
+        position: 'left-top',
       });
       return thunkAPI.rejectWithValue(err.message);
     }
@@ -48,7 +48,7 @@ export const logIn = createAsyncThunk(
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
       Notify.success('Login successful!', {
-        position: 'right-bottom',
+        position: 'left-top',
       });
 
       return res.data;
@@ -56,7 +56,7 @@ export const logIn = createAsyncThunk(
       Notify.failure(
         'Please enter correct login details!',
         {
-          position: 'right-bottom',
+          position: 'left-top',
         }
       );
       return thunkAPI.rejectWithValue(err.message);
@@ -72,12 +72,15 @@ export const logOut = createAsyncThunk(
       // After a successful logout, remove the token from the HTTP header
       clearAuthHeader();
       Notify.success('Logout successful!', {
-        position: 'right-bottom',
+        position: 'left-top',
       });
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
-      });
+      Notify.failure(
+        "We've encountered an error, please try again!",
+        {
+          position: 'left-top',
+        }
+      );
       return thunkAPI.rejectWithValue(err.message);
     }
   }
@@ -103,9 +106,12 @@ export const refreshUser = createAsyncThunk(
       const res = await axios.get('/users/current');
       return res.data;
     } catch (err) {
-      Notify.failure('Error!', {
-        position: 'right-bottom',
-      });
+      Notify.failure(
+        "We've encountered an error, please try again!",
+        {
+          position: 'left-top',
+        }
+      );
       return thunkAPI.rejectWithValue(err.message);
     }
   }

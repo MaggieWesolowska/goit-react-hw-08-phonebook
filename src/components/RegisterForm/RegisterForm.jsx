@@ -42,6 +42,7 @@ export const RegisterForm = () => {
           helperText='Choose name you want to use'
           label='Name'
           name='name'
+          type='name'
         />
       </div>
       <div>
@@ -50,6 +51,7 @@ export const RegisterForm = () => {
           helperText='Enter valid email'
           label='Email'
           name='email'
+          type='email'
         />
       </div>
       <div>
