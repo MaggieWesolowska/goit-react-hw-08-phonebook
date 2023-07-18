@@ -1,5 +1,5 @@
 .form {
-  width: 90%;
+  /* width: 100%; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -7,8 +7,16 @@
   align-items: center;
 }
 
+.registerInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .label {
-  text-align: left;
+  width: 40%;
   color: #673ab7;
   font-weight: 700;
   margin-top: 15px;
@@ -18,4 +26,10 @@
 
 .loginBtn {
   margin-top: 20px;
+  text-align: center;
+}
+
+.inputReg {
+  width: 40%;
+  margin: 0 auto;
 }

@@ -8,12 +8,15 @@ import {
   editContact,
 } from '../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectContacts,
+  selectFilters,
+} from '../redux/selectors';
 
 export const Contacts = () => {
   const dispatch = useDispatch();
-  const { contacts, filter } = useSelector(
-    state => state.contacts
-  );
+  const { contacts } = useSelector(selectContacts);
+  const { filter } = useSelector(selectFilters);
   const [isEditModalOpen, setIsEditModalOpen] =
     useState(false);
   const [editId, setEditId] = useState('');
@@ -66,7 +69,7 @@ export const Contacts = () => {
       <h1>Create New Contact</h1>
       <ContactForm />
       <h1>Your Contacts</h1>
-      <Filter filter={filter} />
+      <Filter />
       <ContactList
         contacts={getFilteredContacts()}
         handleEdit={handleEdit}

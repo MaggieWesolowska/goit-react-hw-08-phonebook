@@ -1,36 +1,25 @@
 import propTypes from 'prop-types';
 import css from './Filter.module.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/slices/filterSlice';
 import TextField from '@mui/material/TextField';
+import { selectFilters } from '../../redux/selectors';
 
-export const Filter = ({ filter }) => {
+export const Filter = () => {
   const dispatch = useDispatch();
 
   const handleChange = e => {
     const { value } = e.currentTarget;
-    dispatch(
-      setFilter({
-        filter: value,
-      })
-    );
+    dispatch(setFilter(value));
   };
 
-  // const selectFilters = state => state.filterSlice;
+  const { filter } = useSelector(selectFilters);
 
   return (
-    <div>
+    <div className={css.filterForm}>
       <label className={css.filterLabel}>
         Find contacts by name
       </label>
-      {/* <input
-        className={css.filterInput}
-        type='text'
-        name='filter'
-        placeholder='Enter filter'
-        value={filter}
-        onChange={handleChange}
-      /> */}
       <TextField
         className={css.filterInput}
         type='text'

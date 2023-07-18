@@ -1,6 +1,6 @@
-export const selectContacts = state => state.contactsSlice;
+export const selectContacts = state => state.contacts;
 
-export const selectFilters = state => state.filterSlice;
+export const selectFilters = state => state.filter;
 
 export const selectIsLoading = state =>
   state.contacts.isLoading;

@@ -23,6 +23,7 @@ export const UserMenu = () => {
     <div>
       <p className={css.welcome}>Welcome, {user.name}</p>
       <ColorButton
+        className={css.userBtn}
         type='submit'
         variant='contained'
         size='small'

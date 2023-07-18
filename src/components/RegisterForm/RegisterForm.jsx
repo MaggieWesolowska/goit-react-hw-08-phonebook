@@ -36,36 +36,40 @@ export const RegisterForm = () => {
       className={css.form}
       onSubmit={handleSubmit}
       autoComplete='off'>
-      <div>
+      <div className={css.registerInput}>
         <p className={css.label}>Username</p>
         <TextField
+          className={css.inputReg}
           helperText='Choose name you want to use'
           label='Name'
           name='name'
           type='name'
         />
       </div>
-      <div>
+      <div className={css.registerInput}>
         <p className={css.label}>Email</p>
         <TextField
+          className={css.inputReg}
           helperText='Enter valid email'
           label='Email'
           name='email'
           type='email'
         />
       </div>
-      <div>
+      <div className={css.registerInput}>
         <p className={css.label}>Password</p>
         <TextField
+          className={css.inputReg}
           helperText='Choose strong password!'
           label='Password'
           name='password'
           type='password'
         />
       </div>
-      <div>
+      <div className={css.registerInput}>
         <p className={css.label}>Confirm Password</p>
         <TextField
+          className={css.inputReg}
           helperText='Confirm your password!'
           label='Confirm Password'
           name='password'

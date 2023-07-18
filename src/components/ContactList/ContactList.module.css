@@ -1,27 +1,27 @@
 .contactList {
   display: flex;
-  width: 50vw;
+  flex-wrap: nowrap;
+  width: 100%;
   margin: 0 auto;
-  padding: 0;
+  align-items: center;
   flex-direction: column;
-  align-items: flex-end;
   list-style: decimal;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 600;
 }
 
 .contactListBtn {
-  width: 55px;
   color: #333;
   font-size: 12px;
-  padding: 8px 8px;
-  margin: 5px;
+  padding: 5px 15px;
   margin-left: 15px;
+  margin-top: 8px;
   font-weight: 700;
   border-radius: 3px;
   border: none;
   cursor: pointer;
   letter-spacing: 0.04em;
+  line-height: 1.9;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover,
