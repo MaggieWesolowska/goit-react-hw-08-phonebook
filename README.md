@@ -1,6 +1,6 @@
 # goit-react-hw-08-phonebook
 
-<<<<< Phonebook - code refactoring to add ability to login, register, user updates and work with private contacts  >>>>>
+<<<<< Phonebook - code refactoring to add ability to login, register, user updates and work with private contacts >>>>>
 
 Add to the Contact Book application the ability to register, login, and user updates, and work with a private collection of contacts.
 
@@ -16,12 +16,7 @@ Add routing with the React Router library. The application should have several p
 Add a navigation component Navigation with links to navigate routes.
 
 User menu
-Create a component UserMenu, that displays the user's email and a logout button. Here's what its markup might look like.
-
-<div>
-  <p>mango@mail.com</p>
-  <button>Logout</button>
-</div>
+Create a component UserMenu, that displays the user's email and a logout button.
 
 Styling.
 This is the final version of the application, so work on styling the interface. You can use a styling library or components such as Chakra UI or Material UI.
