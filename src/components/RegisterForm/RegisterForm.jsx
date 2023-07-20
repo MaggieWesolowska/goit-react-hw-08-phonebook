@@ -70,9 +70,9 @@ export const RegisterForm = () => {
         <p className={css.label}>Confirm Password</p>
         <TextField
           className={css.inputReg}
-          helperText='Confirm your password!'
+          helperText='Confirm your password choice'
           label='Confirm Password'
-          name='confirm password'
+          name='confirm'
           type='password'
         />
       </div>
