@@ -72,7 +72,7 @@ export const RegisterForm = () => {
           className={css.inputReg}
           helperText='Confirm your password!'
           label='Confirm Password'
-          name='password'
+          name='confirm password'
           type='password'
         />
       </div>
