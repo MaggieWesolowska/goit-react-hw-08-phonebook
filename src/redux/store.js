@@ -17,8 +17,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-const middleware = [
-  ...getDefaultMiddleware({
+const middleware = getDefaultMiddleware =>
+  getDefaultMiddleware({
     serializableCheck: {
       ignoredActions: [
         FLUSH,
@@ -29,8 +29,7 @@ const middleware = [
         REGISTER,
       ],
     },
-  }),
-];
+  });
 
 // Persisting token field from auth slice to localstorage
 const authPersistConfig = {
