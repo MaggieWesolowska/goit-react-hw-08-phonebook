@@ -19,4 +19,4 @@ User menu
 Create a component UserMenu, that displays the user's email and a logout button.
 
 Styling.
-This is the final version of the application, so work on styling the interface. You can use a styling library or components such as Chakra UI or Material UI.
+Used styling library or components such as Chakra UI or Material UI.
