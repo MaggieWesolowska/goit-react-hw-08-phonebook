@@ -33,7 +33,7 @@ export const ContactForm = () => {
       ) !== -1
     ) {
       Notify.warning('Contact already exists!', {
-        position: 'right-bottom',
+        position: 'left-top',
       });
     } else {
       dispatch(
